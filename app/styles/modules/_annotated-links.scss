@@ -1,29 +1,38 @@
 a,
 strong,
 em {
-  transition: 0.25s linear all;
+  transition: .25s linear;
 }
 
 a {
-  color: #aaa;
   text-decoration: none;
-}
+  color: $secondary;
 
-a:visited {
-  color: #aaa;
-}
+  &:visited {
+    color: $secondary;
+  }
 
-a:hover {
-  color: #06e;
-}
+  &:hover {
+    color: $actionable;
 
-a:focus {
-  outline: thin dotted;
-}
+    strong {
+      border-bottom: 1px dotted $actionable;
+      color: inherit;
+    }
 
-a:hover,
-a:active {
-  outline: 0;
+    em {
+      color: $actionable;
+    }
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+
+  &:hover,
+  &:active {
+    outline: 0;
+  }
 }
 
 strong {
@@ -31,15 +40,6 @@ strong {
 }
 
 em {
-  color: #444;
   font-style: normal;
-}
-
-a:hover strong {
-  color: inherit;
-  border-bottom: 1px dotted #06e;
-}
-
-a:hover em  {
-  color: #06e;
+  color: $dark;
 }

@@ -1,7 +1,7 @@
 html {
   font-size: 100%;
-  overflow-y: auto;
   text-size-adjust: 100%;
+  overflow-y: auto;
 }
 
 body {
@@ -9,13 +9,13 @@ body {
   font-size: .9em;
   line-height: 1.4;
   font-family: Helvetica, Arial, sans-serif;
-  color: #444;
+  color: $dark;
   overflow: hidden;
 }
 
 h1 {
-  font-size: 2em;
   margin: 0;
+  font-size: 2em;
 }
 
 @media #{$alpha} {
