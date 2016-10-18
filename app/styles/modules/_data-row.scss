@@ -40,4 +40,17 @@ dd {
   }
 }
 
+@media  #{$zulu} {
+  dl {
+    &:first-child {
+      margin-top: 0;
+      border-top-width: .2em;
+      border-top-color: $dark;
+    }
 
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+}

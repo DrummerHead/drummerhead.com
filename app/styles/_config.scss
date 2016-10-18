@@ -1,8 +1,9 @@
 // Media breakpoints
 /////////////////////
 
-$alpha: (min-width: 417px);
-$bravo: (min-width: 577px);
+$alpha: '(min-width: 417px)';
+$bravo: '(min-width: 577px)';
+$zulu: '(min-aspect-ratio: 9 / 7) and (min-width: 730px)';
 
 
 // Color scheme

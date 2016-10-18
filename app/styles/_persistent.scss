@@ -19,3 +19,25 @@
     text-align: left;
   }
 }
+
+@media  #{$zulu} {
+  .vcard {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    max-width: none;
+    margin: auto;
+    padding: 0;
+  }
+
+  [role='banner'] {
+    flex: 0 0 auto;
+    padding: 0 4em 0 0;
+  }
+
+  main {
+    flex: 0 0 auto;
+    width: 27em;
+    padding: 1.8em 0;
+  }
+}
