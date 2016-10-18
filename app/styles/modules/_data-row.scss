@@ -1,0 +1,49 @@
+dl {
+  clear: both;
+  margin: 1em 0;
+  padding: 1em 0;
+  border-top: 1px solid #eee;
+}
+
+dl:before,
+dl:after {
+  content: '';
+  display: table;
+}
+
+dl:after {
+  clear: both;
+}
+
+dt {
+  max-width: 100%;
+  width: auto;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+dd {
+  clear: right;
+  padding: .2em 0;
+  margin: 0;
+}
+
+@media #{$bravo} {
+  dt {
+    float: left;
+    width: 7em;
+    font-weight: normal;
+  }
+
+  dd {
+    float: right;
+    width: 24em;
+  }
+}
+
+@media #{$alpha} {
+  dd {
+    padding: 0;
+  }
+}
+

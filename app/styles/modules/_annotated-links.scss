@@ -1,0 +1,45 @@
+a,
+strong,
+em {
+  transition: 0.25s linear all;
+}
+
+a {
+  color: #aaa;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #aaa;
+}
+
+a:hover {
+  color: #06e;
+}
+
+a:focus {
+  outline: thin dotted;
+}
+
+a:hover,
+a:active {
+  outline: 0;
+}
+
+strong {
+  font-weight: normal;
+}
+
+em {
+  color: #444;
+  font-style: normal;
+}
+
+a:hover strong {
+  color: inherit;
+  border-bottom: 1px dotted #06e;
+}
+
+a:hover em  {
+  color: #06e;
+}

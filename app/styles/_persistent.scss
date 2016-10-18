@@ -1,0 +1,21 @@
+.vcard {
+  max-width: 31em;
+  padding: 0 1em 1em;
+  margin: 0 auto;
+}
+
+[role='banner'] {
+  padding: 0;
+  text-align: center;
+}
+
+@media #{$bravo} {
+  .vcard {
+    padding: 0 2em 2em;
+  }
+
+  [role='banner'] {
+    padding: 0 0 0 7em;
+    text-align: left;
+  }
+}
