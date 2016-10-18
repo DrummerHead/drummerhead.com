@@ -1,45 +1,16 @@
 dl {
-  clear: both;
   margin: 1em 0;
   border-top: 1px solid $subtle;
   padding: 1em 0;
-
-  &::before,
-  &::after {
-    display: table;
-    content: '';
-  }
-
-  &::after {
-    clear: both;
-  }
 }
 
-
 dt {
-  width: auto;
-  max-width: 100%;
   font-weight: bold;
-  overflow: hidden;
 }
 
 dd {
-  clear: right;
   margin: 0;
   padding: .2em 0;
-}
-
-@media #{$bravo} {
-  dt {
-    float: left;
-    width: 7em;
-    font-weight: normal;
-  }
-
-  dd {
-    float: right;
-    width: 24em;
-  }
 }
 
 @media #{$alpha} {
@@ -47,4 +18,26 @@ dd {
     padding: 0;
   }
 }
+
+@media #{$bravo} {
+  dl {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+  }
+
+  dt {
+    align-self: flex-start;
+    font-weight: normal;
+  }
+
+  dd {
+    width: 20.75em;
+
+    &:first-of-type {
+      margin-top: -1.4em;
+    }
+  }
+}
+
 
