@@ -58,6 +58,20 @@ gulp.task('scss-lint', ['sass-lint']);
 // HTML minification
 // -----------------------
 
+gulp.task('html-inline-minify-comment', ['styles-minify', 'copy'], () =>
+  gulp.src('dist/index.html')
+    .pipe($.inlineSource())
+    .pipe($.htmlmin({
+      collapseWhitespace: true,
+      quoteCharacter: "'",
+    }))
+    .pipe($.replace(
+      /<html>/,
+      "<html>\n\n<!-- Source code at https://github.com/DrummerHead/drummerhead.com -->\n\n"
+    ))
+    .pipe(gulp.dest('dist'))
+);
+
 
 // HTML linting
 // -----------------------
@@ -72,6 +86,8 @@ gulp.task('html-lint', () =>
 // =======================
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+
+gulp.task('delete-inlined-files', ['html-inline-minify-comment'], del.bind(null, ['dist/styles']));
 
 
 // Serving
@@ -98,21 +114,14 @@ gulp.task('serve', ['styles'], () => {
 // Building
 // =======================
 
-
-gulp.task('extras', () => {
+gulp.task('copy', () => {
   return gulp.src([
-    'app/*',
+    'app/*'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', ['styles-minify', 'extras'], () => {
+gulp.task('build', ['delete-inlined-files'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
-
-
-// Default
-// =======================
-
-
